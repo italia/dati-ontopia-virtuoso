@@ -1,0 +1,24 @@
+---
+
+# Following is an example of how to configure a CircleCI CI process.
+# More informations can be found at https://circleci.com/docs/
+# Once this file is configured and pushed to the repository the build
+# needs to be activated from the CircleCI administration page.
+
+version: 2
+jobs:
+  build:
+    docker:
+      - image: teamdigitale/pdnd-infra-test-env
+    steps:
+      - checkout
+      - run:
+          name: Execute ansible linting
+          command: |
+            ansible_files=$(git diff-tree --no-commit-id --name-only -r $(git log --pretty=format:'%h' -n 1) | grep ansible | grep ".yaml\|.yml" | tr "\n" " ") || true
+            if [ -z "$ansible_files" ]
+            then
+              echo "No Ansible files to check."
+            else
+              ansible-lint $ansible_files
+            fi
