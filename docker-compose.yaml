@@ -1,3 +1,14 @@
 ---
+version: "3.7"
+services:
+  virtuoso:
+    build: ./
+    environment:
+      SPARQL_UPDATE: "true"
+    ports:
+      - "8890:8890"
+    volumes:
+      - db-virtuoso:/data
 
-# This file is mandatory if your're building a new container - please remove instead it if it's not needed
+volumes:
+  db-virtuoso:
