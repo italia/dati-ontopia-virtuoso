@@ -1,10 +1,6 @@
-# {MY_REPO} for Piattaforma Digitale Nazionale Dati (PDND), previously DAF
+# pdnd-ontopia-virtuoso for Piattaforma Digitale Nazionale Dati (PDND), previously DAF
 
-> Insert here the application logo and badges if present.
-
-> Insert here warnings if necessary (ie. if this is a not stable version).
-
-> Insert here a brief description of what your repository contains. Insert also links to the last release, the official page, the extended documentation, and other useful external resources.
+This projects provides the SPARQL enpoint "Virtuoso" for enhancing user experience with the ontologies and the controlled vocabularies of OntoPiA
 
 ## What is the PDND (previously DAF)?
 
@@ -12,34 +8,40 @@ PDND stays for "Piattaforma Digitale Nazionale Dati" (the Italian Digital Data P
 
 You can find more informations about the PDND on the official [Digital Transformation Team website](https://teamdigitale.governo.it/it/projects/daf.htm).
 
-## What is {MY_REPO}?
+TBD ## What is pdnd-ontopia-virtuoso?
 
 > Insert here an extended description of the project with informations about context, goals, stakeholders, use cases, and finally the role of the project within the PDND with links to other repositories requiring this code or this code depends on. Embed also screenshots or video if present to give a preview of the application.
 
 > Insert here informations about files and folders structure, branch model adopted and release policy.
 
-### Tools references *(optional)*
+## How to build and test pdnd-ontopia-virtuoso
 
-This project references the following tools.
+The project relies on Docker.
+To build the containers type the following command in the terminal having the root of the project as base folder:
 
-* [Tool 1](https://link-to-tool-1.com/)
-* [Tool 2](https://link-to-tool-2.com/)
+```shell
+docker-compose build
+```
 
-### Project components *(optional)*
+To run the containers type the following command in the terminal having the root of the project as base folder:
 
-This project depends by the following components.
+```shell
+docker-compose up
+```
 
-* **Component 1** version X.Y.Z, available [here](https://link-to-your-external-component).
+Once the containers are up and assuming that `localhost` is the reference host, users can access the SPARQL endpoint at <http://localhost:8890/sparql;>
 
-* **Component 2** version X.Y.Z, available [here](https://link-to-your-external-component).
+## SPARQL
 
-## How to install and use {MY_REPO} *(optional)*
+The following is an example of SPARQL SELECT query that returns all the classes defined in the ontology network of OntoPiA.
 
-> Insert here a brief documentation to use this project as an end-user (not a developer) if applicable, including pre-requisites and internal and external dependencies. Insert a link to an extended documentation (user manual) if present.
-
-## How to build and test {MY_REPO}
-
-> Insert here a brief documentation for the developer to build, test and contribute. Insert a link to an extended documentation (developer manual) if present.
+```sql
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT DISTINCT ?class
+WHERE {
+  ?class a owl:Class
+}
+```
 
 ## How to contribute
 
