@@ -1,1 +1,4 @@
-# This file is mandatory if your're building a new container - please remove instead it if it's not needed
+FROM tenforce/virtuoso:1.3.2-virtuoso7.2.5.1
+
+COPY vocabularies /usr/local/virtuoso-opensource/share/virtuoso/vad/vocabularies
+COPY ontologies /usr/local/virtuoso-opensource/share/virtuoso/vad/ontologies
