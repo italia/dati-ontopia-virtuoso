@@ -23,11 +23,16 @@ OntoPiA Virtuoso is a custom, containerized version of the standard version of V
 ## How to build and test OntoPiA Virtuoso
 
 The project relies on Docker.
+
+### Build
+
 To build the containers type the following command in the terminal having the root of the project as base folder:
 
 ```shell
 docker-compose build
 ```
+
+### Run
 
 To run the containers type the following command in the terminal having the root of the project as base folder:
 
