@@ -1,0 +1,1253 @@
+@prefix : <https://w3id.org/italia/onto/CPV/> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix CLV: <https://w3id.org/italia/onto/CLV/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix admsapit: <https://w3id.org/italia/onto/ADMS/> .
+@base <https://w3id.org/italia/onto/CPV> .
+
+<https://w3id.org/italia/onto/CPV> rdf:type owl:Ontology ;
+                                   owl:versionIRI <https://w3id.org/italia/onto/CPV/0.7> ;
+                                   owl:imports <https://w3id.org/italia/onto/CLV> ,
+                                               <https://w3id.org/italia/onto/TI> ,
+                                               <https://w3id.org/italia/onto/l0> ;
+                                   dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/IRREG> ;
+                                   dct:creator <http://spcdata.digitpa.gov.it/browse/page/Amministrazione/ISTAT> ,
+                                               <http://spcdata.digitpa.gov.it/browse/page/Amministrazione/agid> ;
+                                   dct:description "Questa è l'ontologia del profilo applicativo italiano sulle persone."@it ,
+                                                   "This is the ontology of the Italian application profile for Persons"@en ;
+                                   dct:identifier "https://w3id.org/italia/onto/CPV" ;
+                                   dct:issued "2017-07-19"^^xsd:date ;
+                                   dct:language <http://publications.europa.eu/resource/authority/language/ENG> ,
+                                                <http://publications.europa.eu/resource/authority/language/ITA> ;
+                                   dct:modified "2019-05-06"^^xsd:date ;
+                                   dct:publisher <http://spcdata.digitpa.gov.it/browse/page/Amministrazione/agid> ;
+                                   dct:rightsHolder <http://spcdata.digitpa.gov.it/browse/page/Amministrazione/ISTAT> ;
+                                   dct:title "CPV-AP_IT - Core Person Vocabulary Italian Application Profile - Person Ontology"@en ,
+                                             "CPV-AP_IT: Core Person Vocabulary - profilo applicativo italiano - Ontologia delle persone"@it ;
+                                   rdfs:comment "Questa è l'ontologia del profilo applicativo italiano sulle persone."@it ,
+                                                "This is the ontology of the Italian application profile for Persons"@en ;
+                                   rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                                   rdfs:label "Ontologia delle persone (individui)"@it ,
+                                              "Person ontology"@en ;
+                                   owl:versionInfo "Version 0.7 - 06  May 2019 - add honorific"@en ,
+                                                   "Versione 0.7 - 06 Maggio 2019 - aggiunto titolo o appellativo di una persona"@it ;
+                                   dcat:contactPoint <https://w3id.org/italia/data/contact-point/onto-agid> ;
+                                   dcat:keyword "famiglia"@it ,
+                                                "persona"@it ,
+                                                "persone"@it ,
+                                                "residenza"@it ;
+                                   dcat:theme <http://publications.europa.eu/resource/authority/data-theme/SOCI> ;
+                                   prov:wasDerivedFrom <https://w3id.org/italia/onto/CPV/0.6> ;
+                                   admsapit:acronym "CPV-AP_IT" ;
+                                   admsapit:hasContributor <https://w3id.org/italia/data/organization/support-unit/cnr-Z6HZEH/stlab> ;
+                                   admsapit:hasFormalityLevel admsapit:Formal ;
+                                   admsapit:hasKeyClass :Person ,
+                                                        :RegisteredFamily ,
+                                                        :ResidenceInTime ;
+                                   admsapit:hasOntologyLanguage admsapit:OWL ;
+                                   admsapit:hasSemanticAssetDistribution <https://w3id.org/italia/data/distribution/CPVAPIT-JSON-LD> ,
+                                                                         <https://w3id.org/italia/data/distribution/CPVAPIT-RDF-TURTLE> ,
+                                                                         <https://w3id.org/italia/data/distribution/CPVAPIT-RDF-XML> ;
+                                   admsapit:hasTask admsapit:AnnotationTask ,
+                                                    admsapit:QueryFormulationTask ;
+                                   admsapit:last <https://w3id.org/italia/onto/CPV/0.6> ;
+                                   admsapit:officialURI "https://w3id.org/italia/onto/CPV"^^xsd:anyURI ;
+                                   admsapit:prefix "cpvapit" ;
+                                   admsapit:prev <https://w3id.org/italia/onto/CPV/0.6> ;
+                                   admsapit:semanticAssetInUse <https://w3id.org/italia/data/project/DAF> ,
+                                                               <https://w3id.org/italia/data/project/OntoPiA> ;
+                                   admsapit:status "catalogued" ,
+                                                   "published" ;
+                                   admsapit:target "Imprese" ,
+                                                   "Pubbliche Amministrazioni" ;
+                                   admsapit:type admsapit:CoreOntology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/description
+dct:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/format
+dct:format rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/identifier
+dct:identifier rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dct:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dct:title rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2006/vcard/ns#fn
+vcard:fn rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2006/vcard/ns#hasEmail
+vcard:hasEmail rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/dcat#accessURL
+dcat:accessURL rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/dcat#downloadURL
+dcat:downloadURL rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+foaf:name rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/italia/onto/l0/controlledVocabulary
+l0:controlledVocabulary rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/italia/onto/CLV/hasAddress
+CLV:hasAddress rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/italia/onto/CPV/belongsToFamily
+:belongsToFamily rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Resident ;
+                 rdfs:range :Family ;
+                 rdfs:comment "La relazione che lega una persona residente in un paese a una famiglia"@it ,
+                              "The relationship that links a person who is resident in a country to a family"@en ;
+                 rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                 rdfs:label "appartiene a famiglia"@it ,
+                            "belongs to family"@en ;
+                 owl:versionInfo "provvisoria"@it ,
+                                 "unstable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/hasBirthPlace
+:hasBirthPlace rdf:type owl:ObjectProperty ;
+               owl:inverseOf :isBirthPlaceOf ;
+               rdfs:domain :Person ;
+               rdfs:range l0:Location ;
+               rdfs:comment "La relazione che permette di asserire che una persona è nata in un certo luogo."@it ,
+                            "The relation asserts that a person has a certain place of birth."@en ;
+               rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+               rdfs:label "birth place"@en ,
+                          "luogo di nascita"@it ;
+               owl:versionInfo "stabile"@it ,
+                               "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/hasCitizenship
+:hasCitizenship rdf:type owl:ObjectProperty ;
+                rdfs:domain :Person ;
+                rdfs:range l0:Location ;
+                rdfs:comment "La relazione che lega una persona alla sua cittadinanza (ex. cittadinanza italiana)."@it ,
+                             "The relation that links a person to its citizenship (e.g. Italian)"@en ;
+                rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                rdfs:label "citizenship"@en ,
+                           "ha cittadinanza"@it ;
+                owl:versionInfo "stabile"@it ,
+                                "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/hasCurrentResidence
+:hasCurrentResidence rdf:type owl:ObjectProperty ;
+                     owl:inverseOf :isCurrentResidenceOf ;
+                     rdfs:domain :Resident ;
+                     rdfs:range CLV:Address ;
+                     rdfs:comment "Relazione che lega una persona residente in un paese al proprio luogo di residenza Rappresenta la residenza corrente della persona"@it ,
+                                  "The relation that links a person who is resident in a country to his/her location of residence. It is the current residence of the person."@en ;
+                     rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                     rdfs:label "ha residenza attuale"@it ,
+                                "has current residence"@en ;
+                     owl:versionInfo "stabile"@it ,
+                                     "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/hasDeathPlace
+:hasDeathPlace rdf:type owl:ObjectProperty ;
+               owl:inverseOf :isDeathPlaceOf ;
+               rdfs:domain :Dead ;
+               rdfs:range l0:Location ;
+               rdfs:comment "La relazione che lega una persona morta al luogo di morte."@it ,
+                            "The relation that links a person who is dead to its place of death."@en ;
+               rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+               rdfs:label "death place"@en ,
+                          "luogo di morte"@it ;
+               owl:versionInfo "stabile"@it ,
+                               "unstable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/hasLevelOfEducation
+:hasLevelOfEducation rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Alive ;
+                     rdfs:range :EducationLevel ;
+                     rdfs:comment "La relazione che lega una persona in vita al suo grado di istruzione"@it ,
+                                  "The relation that links an alive person to his/her education level"@en ;
+                     rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                     rdfs:label "ha grado di istruzione"@it ,
+                                "has level of education"@en ;
+                     owl:versionInfo "stabile"@it ,
+                                     "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/hasParentalRelationshipWith
+:hasParentalRelationshipWith rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf :hasRelationshipWith ;
+                             rdfs:domain :Person ;
+                             rdfs:range :Person ;
+                             rdfs:comment "A parental relationship between two persons."@en ,
+                                          "Una relazione di parentela tra due persone."@it ;
+                             rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                             rdfs:label "ha relazione parentale con"@it ,
+                                        "has parental relationship with"@en ;
+                             owl:versionInfo "stabile"@it ,
+                                             "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/hasPersonTitle
+:hasPersonTitle rdf:type owl:ObjectProperty ;
+                rdfs:domain :Person ;
+                rdfs:range :PersonTitle ;
+                rdfs:comment "Connette una persona ad un suo titolo."@it ,
+                             "It links a person to his/her title."@en ;
+                rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                rdfs:label "ha titolo"@it ,
+                           "has title"@en ;
+                admsapit:status "instabile"@it ,
+                                "unstable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/hasRelationshipWith
+:hasRelationshipWith rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Person ;
+                     rdfs:range :Person ;
+                     rdfs:comment "Any relationship between people."@en ,
+                                  "Qualsiasi relazione tra persone."@it ;
+                     rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                     rdfs:label "ha relazione con"@it ,
+                                "has relationship with"@en ;
+                     owl:versionInfo "stabile"@it ,
+                                     "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/hasResidenceInTime
+:hasResidenceInTime rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :isResidenceInTimeOf ;
+                    rdfs:domain :Person ;
+                    rdfs:range :ResidenceInTime ;
+                    rdfs:comment "Property that links a person to his/her residence in time"@en ,
+                                 "Proprietà che lega una persona allo storico della sua residenza (lega quindi la persona alla relazione ennaria residenza nel tempo)"@it ;
+                    rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                    rdfs:label "ha stato residenza (ha residenza nel tempo)"@it ,
+                               "has residence in time"@en ;
+                    owl:versionInfo "provvisoria"@it ,
+                                    "unstable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/hasSex
+:hasSex rdf:type owl:ObjectProperty ;
+        rdfs:domain :Person ;
+        rdfs:range :Sex ;
+        rdfs:comment "La relazione che lega una persona al suo sesso"@it ,
+                     "The relation that links a person to his/her sex"@en ;
+        rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+        rdfs:label "ha sesso"@it ,
+                   "has sex"@en ;
+        owl:versionInfo "stabile"@it ,
+                        "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/inRegisteredFamily
+:inRegisteredFamily rdf:type owl:ObjectProperty ;
+                    rdfs:domain :ParentalRelationship ;
+                    rdfs:range :RegisteredFamily ;
+                    rdfs:comment "Relazione che lega un tipo di relazione parentale con la relativa famiglia anagrafica"@it ,
+                                 "The relation that links the different types of Parental Relationship to the related Registered Family"@en ;
+                    rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                    rdfs:label "in famiglia anagrafica"@it ,
+                               "in registered family"@en ;
+                    owl:versionInfo "stabile"@it ,
+                                    "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/isBirthPlaceOf
+:isBirthPlaceOf rdf:type owl:ObjectProperty ;
+                rdfs:domain l0:Location ;
+                rdfs:range :Person ;
+                rdfs:comment "La relazione tra un luogo ed una persona dove il luogo è il luogo di nascit della persona oggetto della relazione."@it ,
+                             "The relation between a place and a person. The relation asserts that a place is the place of birth of the person object of the relation."@en ;
+                rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                rdfs:label "is birth place of"@en ,
+                           "è luogo di nascita di"@it ;
+                owl:versionInfo "stabile"@it ,
+                                "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/isChildOf
+:isChildOf rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasParentalRelationshipWith ;
+           owl:inverseOf :isParentOf ;
+           rdfs:domain :Person ;
+           rdfs:range :Person ;
+           rdfs:comment "La relazione figlio-padre (ex. Mario è figlio di Carlo)."@it ,
+                        "The relation child-parent (e.g. John is the son of Peter)."@en ;
+           rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+           rdfs:label "child of"@en ,
+                      "figlio di"@it ;
+           owl:versionInfo "stabile"@it ,
+                           "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/isConsortOf
+:isConsortOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasParentalRelationshipWith ;
+             rdfs:domain :Person ;
+             rdfs:range :Person ;
+             rdfs:comment "La relazione di matrimonio tra due persone."@it ,
+                          "The marriage relation between persons"@en ;
+             rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+             rdfs:label "is consort of"@en ,
+                        "è coniuge di"@it ;
+             owl:versionInfo "stabile"@it ,
+                             "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/isCurrentResidenceOf
+:isCurrentResidenceOf rdf:type owl:ObjectProperty ;
+                      rdfs:domain CLV:Address ;
+                      rdfs:range :Resident ;
+                      rdfs:comment "Relazione inversa che lega una persona residente in un paese al proprio luogo di residenza Rappresenta la residenza corrente della persona"@it ,
+                                   "The inverse relation that links a person who is resident in a country to his/her location of residence. It is the current residence of the person."@en ;
+                      rdfs:label "is current residence of"@en ,
+                                 "è residenza attuale di"@it .
+
+
+###  https://w3id.org/italia/onto/CPV/isDeathPlaceOf
+:isDeathPlaceOf rdf:type owl:ObjectProperty ;
+                rdfs:domain l0:Location ;
+                rdfs:range :Dead ;
+                rdfs:comment "La proprietà per associare un luogo di morte (i.e. una località) alla persona morta."@it ,
+                             "The property to link the death place (i.e. a location) to a person"@en ;
+                rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                rdfs:label "death place of"@en ,
+                           "è luogo di morte di"@it ;
+                owl:versionInfo "stabile"@it ,
+                                "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/isGrandChildOf
+:isGrandChildOf rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasParentalRelationshipWith ;
+                owl:inverseOf :isGrandFatherOf ;
+                rdfs:domain :Person ;
+                rdfs:range :Person ;
+                rdfs:comment "It represents the parental relationship grandchild-grandfather"@en ,
+                             "Rappresenta la relazione di parentela nipote-nonno"@it ;
+                rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                rdfs:label "is granchild of"@en ,
+                           "è nipote lato nonni di"@it ;
+                owl:versionInfo "provvisoria"@it ,
+                                "unstable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/isGrandFatherOf
+:isGrandFatherOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :hasParentalRelationshipWith ;
+                 rdfs:domain :Person ;
+                 rdfs:range :Person ;
+                 rdfs:comment "La relazione parentale tra nonno-nipote"@it ,
+                              "The grandfathership relation"@en ;
+                 rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                 rdfs:label "is grandfather of"@en ,
+                            "è nonno di"@it ;
+                 owl:versionInfo "stabile"@it ,
+                                 "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/isNephewOf
+:isNephewOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasParentalRelationshipWith ;
+            owl:inverseOf :isUncleOf ;
+            rdfs:domain :Person ;
+            rdfs:range :Person ;
+            rdfs:comment "La relazione di parentela tra un nipote ed uno zio."@it ,
+                         "The nephew relation between a newphew and an uncle."@en ;
+            rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+            rdfs:label "is nephew of"@en ,
+                       "è nipote lato zii di"@it ;
+            owl:versionInfo "provvisoria"@it ,
+                            "unstable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/isParentOf
+:isParentOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasParentalRelationshipWith ;
+            rdfs:domain :Person ;
+            rdfs:range :Person ;
+            rdfs:comment "La relazione padre-figlio."@it ,
+                         "The parent-child relationship."@en ;
+            rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+            rdfs:label "is parent of"@en ,
+                       "è genitore di"@it ;
+            owl:versionInfo "stabile"@it ,
+                            "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/isResidenceInTimeOf
+:isResidenceInTimeOf rdf:type owl:ObjectProperty ;
+                     rdfs:domain :ResidenceInTime ;
+                     rdfs:range :Person ;
+                     rdfs:comment "Inverse property of \"has residence in time\" which links residence in time with the person"@en ,
+                                  "Proprietà inversa di \"ha residenza nel tempo (ha stato residenza)\" che collega il concetto di residenza nel tempo con la persona."@it ;
+                     rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                     rdfs:label "is residence in time of"@en ,
+                                "è stato residenza di (è residenza nel tempo di)"@it ;
+                     owl:versionInfo "provvisoria"@it ,
+                                     "unstable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/isResidenceOf
+:isResidenceOf rdf:type owl:ObjectProperty ;
+               owl:inverseOf :residentIn .
+
+
+###  https://w3id.org/italia/onto/CPV/isUncleOf
+:isUncleOf rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasParentalRelationshipWith ;
+           rdfs:domain :Person ;
+           rdfs:range :Person ;
+           rdfs:comment "La relazione di parentela tra zio e nipote."@it ,
+                        "The uncleship relation."@en ;
+           rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+           rdfs:label "is uncle of"@en ,
+                      "è zio di"@it ;
+           owl:versionInfo "provvisoria"@it ,
+                           "unstable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/knows
+:knows rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :hasRelationshipWith ;
+       rdf:type owl:SymmetricProperty ;
+       rdfs:domain :Person ;
+       rdfs:range :Person ;
+       rdfs:comment "La relazione di conoscenza che intercorre tra due persone. Ex. 'Mario Rossi' conosce 'Paolo Neri'."@it ,
+                    "The relationship of knowledge between two people. E.g. 'John White' knows 'Bob Black'."@en ;
+       rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+       rdfs:label "conosce"@it ,
+                  "knows"@en ;
+       owl:versionInfo "stabile"@it ,
+                       "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/residenceInLocation
+:residenceInLocation rdf:type owl:ObjectProperty ;
+                     rdfs:domain :ResidenceInTime ;
+                     rdfs:range l0:Location ;
+                     rdfs:comment "Property that links the residence in time (the n-ray relationship) to the location of the residence."@en ,
+                                  "Proprietà che lega la residenza nel tempo (lo storico della residenza attraverso la definizione della relazione ennaria) al luogo della residenza."@it ;
+                     rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                     rdfs:label "residence in location"@en ,
+                                "residenza in luogo"@it ;
+                     owl:versionInfo "provvisoria"@it ,
+                                     "unstable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/residentIn
+:residentIn rdf:type owl:ObjectProperty ;
+            rdfs:domain :Person ;
+            rdfs:range CLV:Address ;
+            owl:propertyChainAxiom ( :hasResidenceInTime
+                                     :residenceInLocation
+                                   ) ;
+            rdfs:comment "Questa proprietà rappresenta la residenza espressa come relazione binaria tra una persona ed un indirizzo."@it ,
+                         "This property represents the residence expressed as binary relation between a person and an address."@en ;
+            rdfs:label "resident in"@en ,
+                       "residente in"@it .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/italia/onto/CPV/age
+:age rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Alive ;
+     rdfs:range xsd:integer ;
+     rdfs:comment "L'età della persona naturale. Es: 64"@it ,
+                  "The age of the natural person"@en ;
+     rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+     rdfs:label "age"@en ,
+                "età"@it ;
+     owl:versionInfo "stabile"@it ,
+                     "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/ageWhenDead
+:ageWhenDead rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :age ;
+             rdfs:domain :Dead ;
+             rdfs:range xsd:integer ;
+             rdfs:comment "L'età della persona naturale rielvata al momento del decesso."@it ,
+                          "The age of the natural person observed at the time of death"@en ;
+             rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+             rdfs:label "age when dead"@en ,
+                        "età al decesso"@it ;
+             owl:versionInfo "stabile"@it ,
+                             "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/altName
+:altName rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf l0:name ;
+         rdfs:domain :Person ;
+         rdfs:range xsd:string ;
+         rdfs:comment "The alternative name or middle name of a person. E.g., Anne is the middle name of \"Mary Anne Clark\"."@en ,
+                      "il nome alternativo o secondo nome di una persona. Per esempio Anne è il secondo nome di \"Mary Anne Clarke\"."@it ;
+         rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+         rdfs:label "alternative name"@en ,
+                    "nome alternativo (secondo nome)"@it ;
+         owl:versionInfo "provvisoria"@it ,
+                         "unstable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/dateOfBirth
+:dateOfBirth rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Person ;
+             rdfs:range xsd:dateTime ;
+             rdfs:comment "La data di nascita della persona naturale"@it ,
+                          "The date of birth of the natural person"@en ;
+             rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+             rdfs:label "data di nascita"@it ,
+                        "date of birth"@en ;
+             owl:versionInfo "stabile"@it ,
+                             "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/dateOfDeath
+:dateOfDeath rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Dead ;
+             rdfs:range xsd:dateTime ;
+             rdfs:comment "La data di morte della persona naturale. Es: 2002-10-04"@it ,
+                          "The date of birth of the natural person"@en ;
+             rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+             rdfs:label "data di morte"@it ,
+                        "date of death"@en ;
+             owl:versionInfo "stabile"@it ,
+                             "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/educationLevelDesc
+:educationLevelDesc rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf l0:description ;
+                    rdfs:domain :EducationLevel ;
+                    rdfs:range rdfs:Literal ;
+                    rdfs:comment "Property used to represent the education level as defined in the related controlled vocabulary EducationLevel https://w3id.org/italia/controlled-vocabulary/classifications-for-people/education-level"@en ,
+                                 "Proprietà utilizzata per rappresentare il grado di istruzione come definito nel relativo vocabolario controllato EducationLevel https://w3id.org/italia/controlled-vocabulary/classifications-for-people/education-level"@it ;
+                    rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                    rdfs:label "descrizione grado di istruzione"@it ,
+                               "education level description"@en ;
+                    owl:versionInfo "stabile"@it ,
+                                    "stable"@en ;
+                    l0:controlledVocabulary <https://w3id.org/italia/controlled-vocabulary/classifications-for-people/education-level> .
+
+
+###  https://w3id.org/italia/onto/CPV/educationLevelID
+:educationLevelID rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf l0:identifier ;
+                  rdf:type owl:FunctionalProperty ;
+                  rdfs:domain :EducationLevel ;
+                  rdfs:range rdfs:Literal ;
+                  rdfs:comment "Unique code used to identify the education level in the controlled vocabulary EducationLevel https://w3id.org/italia/controlled-vocabulary/classifications-for-people/education-level"@en ,
+                               "codice univoco che identifica il grado di istruzione nel vocabolario controllato EducationLevel https://w3id.org/italia/controlled-vocabulary/classifications-for-people/education-level"@it ;
+                  rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                  rdfs:label "codice grado di istruzione"@it ,
+                             "education level identifier"@en ;
+                  owl:versionInfo "stabile"@it ,
+                                  "stable"@en ;
+                  l0:controlledVocabulary <https://w3id.org/italia/controlled-vocabulary/classifications-for-people/education-level> .
+
+
+###  https://w3id.org/italia/onto/CPV/familyName
+:familyName rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf l0:name ;
+            rdfs:domain :Person ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Il cognome di una persona. Ex. 'Rossi' è il cognome della persona 'Mario Rossi'"@it ,
+                         "The family name of a person. E.g. 'Rossi' is the family name of the person 'Mario Rossi'."@en ;
+            rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+            rdfs:label "cognome"@it ,
+                       "family name"@en ;
+            owl:versionInfo "stabile"@it ,
+                            "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/givenName
+:givenName rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf l0:name ;
+           rdfs:domain :Person ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Il nome di una persona. Ex. 'Mario' è il nome della persona 'Mario Rossi'."@it ,
+                        "The given name of a person. E.g. 'Mario' is the given name of the person 'Mario Rossi'."@en ;
+           rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+           rdfs:label "given name"@en ,
+                      "nome proprio"@it ;
+           owl:versionInfo "stabile"@it ,
+                           "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/numberRegFamilyComponents
+:numberRegFamilyComponents rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :RegisteredFamily ;
+                           rdfs:range xsd:integer ;
+                           rdfs:comment "Il numero di persone che compongono la famiglia anagrafica"@it ,
+                                        "The number of people who forms the registered family"@en ;
+                           rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                           rdfs:label "number of components in registered family"@en ,
+                                      "numero componenti famiglia anagrafica"@it ;
+                           owl:versionInfo "stabile"@it ,
+                                           "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/personID
+:personID rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf l0:identifier ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Person ;
+          rdfs:range xsd:string ;
+          rdfs:comment "E' un codice univoco associato a una persona. Potrebbe essere per esempio il codice individuo attribuito dall'ISTAT per la gestione dei dati nei propri registri interni."@it ,
+                       "Unique identifier of a person. For instance it maybe a unique code associated by ISTAT (Italian Institute of Statistics) in its internal systems."@en ;
+          rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+          rdfs:label "codice persona"@it ,
+                     "person identifier"@en ;
+          owl:versionInfo "stabile"@it ,
+                          "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/registeredFamilyID
+:registeredFamilyID rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf l0:identifier ;
+                    rdf:type owl:FunctionalProperty ;
+                    rdfs:domain :RegisteredFamily ;
+                    rdfs:range rdfs:Literal ;
+                    rdfs:comment "Identificativo univoco della famiglia anagrafica"@it ,
+                                 "Unique identifier of the registered family"@en ,
+                                 "registered family identifier"@en ;
+                    rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                    rdfs:label "codice famiglia anagrafica"@it ;
+                    owl:versionInfo "stabile"@it ,
+                                    "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/sexDesc
+:sexDesc rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf l0:description ;
+         rdfs:domain :Sex ;
+         rdfs:range rdfs:Literal ;
+         rdfs:comment "Property used to represent the sex as defined in the related Sex controlled vocabulary  https://w3id.org/italia/controlled-vocabulary/classifications-for-people/sex"@en ,
+                      "Proprietà utilizzata per rappresentare il sesso di una persona come definito nel vocabolario controllato sul sesso: https://w3id.org/italia/controlled-vocabulary/classifications-for-people/sex"@it ;
+         rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+         rdfs:label "descrizione sesso"@it ,
+                    "sex description"@en ;
+         owl:versionInfo "stabile"@it ,
+                         "stable"@en ;
+         l0:controlledVocabulary <https://w3id.org/italia/controlled-vocabulary/classifications-for-people/sex> .
+
+
+###  https://w3id.org/italia/onto/CPV/sexID
+:sexID rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf l0:identifier ;
+       rdf:type owl:FunctionalProperty ;
+       rdfs:domain :Sex ;
+       rdfs:range rdfs:Literal ;
+       rdfs:comment "Codice della voce del vocabolario controllato sul sesso  https://w3id.org/italia/controlled-vocabulary/classifications-for-people/sex. Esso assume i valori \"M\" e \"F\"."@it ,
+                    "Sex code used in the sex controlled vocabulary https://w3id.org/italia/controlled-vocabulary/classifications-for-people/sex. It assumes the values \"F\" and \"M\"."@en ;
+       rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+       rdfs:label "codice sesso"@it ,
+                  "sex identifier"@en ;
+       owl:versionInfo "stabile"@it ,
+                       "stable"@en ;
+       l0:controlledVocabulary <https://w3id.org/italia/controlled-vocabulary/classifications-for-people/sex> .
+
+
+###  https://w3id.org/italia/onto/CPV/taxCode
+:taxCode rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf l0:identifier ;
+         rdfs:domain :Person ;
+         rdfs:range rdfs:Literal ;
+         rdfs:comment "Il codice fiscale di  una persona."@it ,
+                      "The tax code of a person."@en ;
+         rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+         rdfs:label "codice fiscale"@it ,
+                    "tax code"@en ;
+         owl:versionInfo "stabile"@it ,
+                         "stable"@en .
+
+
+###  https://w3id.org/italia/onto/l0/description
+l0:description rdf:type owl:DatatypeProperty ;
+               rdfs:isDefinedBy l0: .
+
+
+###  https://w3id.org/italia/onto/l0/identifier
+l0:identifier rdf:type owl:DatatypeProperty ;
+              rdfs:isDefinedBy l0: .
+
+
+###  https://w3id.org/italia/onto/l0/name
+l0:name rdf:type owl:DatatypeProperty ;
+        rdfs:isDefinedBy l0: .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://dati.gov.it/onto/dcatapit#Agent
+<http://dati.gov.it/onto/dcatapit#Agent> rdf:type owl:Class .
+
+
+###  http://dati.gov.it/onto/dcatapit#Organization
+<http://dati.gov.it/onto/dcatapit#Organization> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2006/vcard/ns#Kind
+vcard:Kind rdf:type owl:Class .
+
+
+###  http://www.w3.org/2006/vcard/ns#Organization
+vcard:Organization rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+foaf:Agent rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/onto/ADMS/Project
+admsapit:Project rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/onto/ADMS/SemanticAsset
+admsapit:SemanticAsset rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/onto/ADMS/SemanticAssetDistribution
+admsapit:SemanticAssetDistribution rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/onto/CLV/Address
+CLV:Address rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/onto/CPV/Alive
+:Alive rdf:type owl:Class ;
+       rdfs:subClassOf :Person ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasLevelOfEducation ;
+                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :EducationLevel
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :age ;
+                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onDataRange xsd:integer
+                       ] ;
+       owl:disjointWith :Dead ;
+       rdfs:comment "An alive person"@en ,
+                    "Una persona in vita"@it ;
+       rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+       rdfs:label "Alive Person"@en ,
+                  "Persona in Vita"@it ;
+       owl:versionInfo "stabile"@it ,
+                       "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/BornDead
+:BornDead rdf:type owl:Class ;
+          rdfs:subClassOf :Dead ;
+          rdfs:comment "A natural person who was born dead"@en ,
+                       "Una persona naturale che è nata morta"@it ;
+          rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+          rdfs:label "Born Dead Person"@en ,
+                     "Persona Nata Morta"@it ;
+          owl:versionInfo "stabile"@it ,
+                          "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/Dead
+:Dead rdf:type owl:Class ;
+      rdfs:subClassOf :Person ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasDeathPlace ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass l0:Location
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :ageWhenDead ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:integer
+                      ] ;
+      rdfs:comment "A dead natural person"@en ,
+                   "Una persona naturale morta"@it ;
+      rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+      rdfs:label "Dead Person"@en ,
+                 "Persona Morta"@it ;
+      owl:versionInfo "stabile"@it ,
+                      "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/EducationLevel
+:EducationLevel rdf:type owl:Class ;
+                rdfs:subClassOf l0:Characteristic ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :educationLevelDesc ;
+                                  owl:someValuesFrom rdfs:Literal
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :educationLevelID ;
+                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                ] ;
+                rdfs:comment "Questa classe rappresenta il grado di istruzione della persona. Le istanze di questa classe sono definite nel relativo vocabolario controllato EducationLevel https://w3id.org/italia/controlled-vocabulary/classifications-for-people/education-level"@it ,
+                             "This class represents the level of education of a person. The individuals of this class are defined in the related controlled vocabulary EducationLevel https://w3id.org/italia/controlled-vocabulary/classifications-for-people/education-level"@en ;
+                rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                rdfs:label "Education Level"@en ,
+                           "Grado di Istruzione"@iit ;
+                owl:versionInfo "stabile"@it ,
+                                "stable"@en ;
+                l0:controlledVocabulary <https://w3id.org/italia/controlled-vocabulary/classifications-for-people/education-level> .
+
+
+###  https://w3id.org/italia/onto/CPV/Family
+:Family rdf:type owl:Class ;
+        rdfs:subClassOf l0:Agent ;
+        rdfs:comment "A human community generally formed by people tied together by a relationship of coexistence, of kinship, of affinity, which constitutes the fundamental element of every society, since it is aimed, in its processes and relations, at the perpetuation of the species through reproduction."@en ,
+                     "In senso ampio, comunità umana, diversamente caratterizzata nelle varie situazioni storiche e geografiche, ma in genere formata da persone legate fra loro da un rapporto di convivenza, di parentela, di affinità, che costituisce l’elemento fondamentale di ogni società, essendo essa finalizzata, nei suoi processi e nelle sue relazioni, alla perpetuazione della specie mediante la riproduzione."@it ;
+        rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+        rdfs:label "Famiglia"@iit ,
+                   "Family"@en ;
+        owl:versionInfo "stabile"@it ,
+                        "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/FamilySheetHolder
+:FamilySheetHolder rdf:type owl:Class ;
+                   rdfs:subClassOf :ParentalRelationship ,
+                                   :Person ;
+                   rdfs:comment "Questa classe rappresenta l'intestatario del foglio di famiglia. Per intestatario del foglio di famiglia si intende la persona cui è intestata la scheda di famiglia in anagrafe."@it ,
+                                "This class represents the holder of the family sheet. The holder of the family sheet is defined as the person to whom the family in the civil register is headed."@en ;
+                   rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                   rdfs:label "Family Sheet Holder"@en ,
+                              "Intestatario Foglio di Famiglia"@it ;
+                   owl:versionInfo "provvisoria"@it ,
+                                   "unstable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/Female
+:Female rdf:type owl:Class ;
+        rdfs:subClassOf :Person ;
+        owl:disjointWith :Male ;
+        rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+        rdfs:label "Female"@en ,
+                   "Femmina"@it ;
+        owl:versionInfo "stabile"@it ,
+                        "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/ForeignCitizen
+:ForeignCitizen rdf:type owl:Class ;
+                rdfs:subClassOf :Alive ;
+                rdfs:comment "A natural person who owns a foreign nationality"@en ,
+                             "Una persona naturale che ha cittadinanza straniera"@it ;
+                rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                rdfs:label "Cittadino Straniero"@it ,
+                           "Foreign Citizen"@en ;
+                owl:versionInfo "stabile"@it ,
+                                "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/ItalianCitizen
+:ItalianCitizen rdf:type owl:Class ;
+                rdfs:subClassOf :Alive ;
+                rdfs:comment "A natural person who owns an Italian nationality"@en ,
+                             "Una persona naturale che possiede la cittadinanza italiana"@it ;
+                rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                rdfs:label "Cittadino Italiano"@it ,
+                           "Italian Citizen"@en ;
+                owl:versionInfo "stabile"@it ,
+                                "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/Male
+:Male rdf:type owl:Class ;
+      rdfs:subClassOf :Person ;
+      rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+      rdfs:label "Male"@en ,
+                 "Maschio"@it ;
+      owl:versionInfo "stabile"@it ,
+                      "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/NotResident
+:NotResident rdf:type owl:Class ;
+             rdfs:subClassOf :Person ;
+             owl:disjointWith :Resident ;
+             rdfs:comment "A natural person who is not resident in the country."@en ,
+                          "Una persona naturale non residenze nel Paese."@it ;
+             rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+             rdfs:label "Not Resident Person"@en ,
+                        "Persona non Residente"@it ;
+             owl:versionInfo "stabile"@it ,
+                             "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/ParentalRelationship
+:ParentalRelationship rdf:type owl:Class ;
+                      rdfs:subClassOf l0:Description ;
+                      rdfs:comment "La classe rappresenta i diversi tipi di relazioni parentali. Per esempio l'intestatario del foglio di famiglia è un tipo di relazione parentale così come il coniuge (o convivente) dell'intestatario, il figlio  dell'intestatario e coniuge convivente, il fratello/sorella dell'intestatario."@it ,
+                                   "The class represents the different types of parental relationships"@en ;
+                      rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                      rdfs:label "Parental Relationship"@en ,
+                                 "Relazione Parentale"@it ;
+                      owl:versionInfo "provvisoria"@it ,
+                                      "unstable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf l0:Agent ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty CLV:hasAddress ;
+                          owl:allValuesFrom CLV:Address
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasParentalRelationshipWith ;
+                          owl:allValuesFrom :Person
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasPersonTitle ;
+                          owl:allValuesFrom :PersonTitle
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasRelationshipWith ;
+                          owl:allValuesFrom :Person
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasResidenceInTime ;
+                          owl:allValuesFrom :ResidenceInTime
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :residentIn ;
+                          owl:allValuesFrom CLV:Address
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasBirthPlace ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass l0:Location
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasSex ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Sex
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :dateOfBirth ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:dateTime
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :personID ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:string
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :altName ;
+                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:string
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :familyName ;
+                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:string
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :givenName ;
+                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:string
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :taxCode ;
+                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                        ] ;
+        rdfs:comment "A natural person"@en ,
+                     "Una persona naturale"@it ;
+        rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+        rdfs:label "Person"@en ,
+                   "Persona"@it ;
+        owl:versionInfo "stabile"@it ,
+                        "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/PersonTitle
+:PersonTitle rdf:type owl:Class ;
+             rdfs:subClassOf l0:Characteristic ;
+             rdfs:comment "A title is a word used before or after a person's name (e.g. Mr., Mrs. etc.)"@en ,
+                          "Un titolo è una parola usata prima o dopo il nome di una persona (e.g. Sig. Dott., Avv.)."@it ;
+             rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+             rdfs:label "Person Title"@en ,
+                        "Titolo Persona"@it ;
+             owl:versionInfo "instabile"@it ,
+                             "unstable"@en ;
+             l0:controlledVocabulary <https://w3id.org/italia/controlled-vocabulary/classifications-for-people/person-title> .
+
+
+###  https://w3id.org/italia/onto/CPV/RegisteredFamily
+:RegisteredFamily rdf:type owl:Class ;
+                  rdfs:subClassOf :Family ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :registeredFamilyID ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :numberRegFamilyComponents ;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:integer
+                                  ] ;
+                  rdfs:comment "E' un insieme di persone legate da vincoli di matrimonio, parentela, affinità, adozione, tutela o da vincoli affettivi. I membri devono coabitare e avere dimora abituale nello stesso Comune (articolo 4 del Decreto del Presidente della Repubblica 30/05/1989, n. 223)"@it ,
+                               "It is a group of people tied together by relationships of marriage, kinship, affinity, adoption, protection or affection. The members must live and be habitually resident in the same municipality (Article 4 of Italian Presidential Decree 30/05/1989, n. 223)"@en ;
+                  rdfs:label "Famiglia Anagrafica"@it ,
+                             "Registered Family"@en ;
+                  owl:versionInfo <https://w3id.org/italia/onto/CPV> ,
+                                  "stabile"@it ,
+                                  "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/ResidenceInTime
+:ResidenceInTime rdf:type owl:Class ;
+                 rdfs:subClassOf <https://w3id.org/italia/onto/TI/TimeIndexedEvent> ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :residenceInLocation ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass CLV:Address
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :isResidenceInTimeOf ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :Person
+                                 ] ;
+                 rdfs:comment "Questa classe rappresenta una relazione ennaria tra diversi concetti del dominio, in particolare con una persona residente in un paese, il luogo di residenza e il periodo temporale. E' utilizzata per gestire lo storico delle residenze delle persone. Essa è sottoclasse di TimeIndexedEvent definita nella time ontology della network OntoPiA e pertanto eredita la relazione con l'intervallo temporale."@it ,
+                              "This class represents the n-ary relationship between a resident, the location of residence and the time. It is specifically subclass of the TimeIndexedEvent defined in the time ontology from which it inherits the relationship with the time interval"@en ;
+                 rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+                 rdfs:label "Residence in Time"@en ,
+                            "Residenza nel tempo (storica)"@it ;
+                 owl:versionInfo "provvisoria"@it ,
+                                 "unstable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/Resident
+:Resident rdf:type owl:Class ;
+          rdfs:subClassOf :Alive ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :belongsToFamily ;
+                            owl:allValuesFrom :Family
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCurrentResidence ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass l0:Location
+                          ] ;
+          rdfs:comment "A natural person who is resident in the country"@en ,
+                       "Una persona naturale residente nel Paese."@it ;
+          rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+          rdfs:label "Resident"@en ,
+                     "Residente"@it ;
+          owl:versionInfo "stabile"@it ,
+                          "stable"@en .
+
+
+###  https://w3id.org/italia/onto/CPV/Sex
+:Sex rdf:type owl:Class ;
+     rdfs:subClassOf l0:Characteristic ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :sexDesc ;
+                       owl:someValuesFrom xsd:string
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :sexID ;
+                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                     ] ;
+     rdfs:comment "Questa classe rappresenta il sesso della persona. Le istanze della classe sono definite nel relativo vocabolario controllato sul sesso https://w3id.org/italia/controlled-vocabulary/classifications-for-people/sex"@it ,
+                  "This class represents the sex of the person. The instances of the class are defined in the related sex controlled vocabulary https://w3id.org/italia/controlled-vocabulary/classifications-for-people/sex"@en ;
+     rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+     rdfs:label "Sesso"@it ,
+                "Sex"@en ;
+     owl:versionInfo "stabile"@it ,
+                     "stable"@en ;
+     l0:controlledVocabulary <https://w3id.org/italia/controlled-vocabulary/classifications-for-people/sex> .
+
+
+###  https://w3id.org/italia/onto/CPV/Stateless
+:Stateless rdf:type owl:Class ;
+           rdfs:subClassOf :Alive ;
+           owl:disjointWith [ rdf:type owl:Class ;
+                              owl:unionOf ( :ForeignCitizen
+                                            :ItalianCitizen
+                                          )
+                            ] ;
+           rdfs:comment "A natural person who emigrated abroad, who has no nationality, because he or she does not have the nationality of origin and does not possess another one."@en ,
+                        "Una persona naturale emigrata all'estero, che non ha alcuna cittadinanza, perché priva di quella di origine e non in possesso di un'altra"@it ;
+           rdfs:isDefinedBy <https://w3id.org/italia/onto/CPV> ;
+           rdfs:label "Apolide"@it ,
+                      "Stateless Person"@en ;
+           owl:versionInfo "stabile"@it ,
+                           "stable"@en .
+
+
+###  https://w3id.org/italia/onto/TI/TimeIndexedEvent
+<https://w3id.org/italia/onto/TI/TimeIndexedEvent> rdf:type owl:Class ;
+                                                   rdfs:isDefinedBy <https://w3id.org/italia/onto/TI> .
+
+
+###  https://w3id.org/italia/onto/l0/Agent
+l0:Agent rdf:type owl:Class ;
+         rdfs:isDefinedBy l0: .
+
+
+###  https://w3id.org/italia/onto/l0/Characteristic
+l0:Characteristic rdf:type owl:Class ;
+                  rdfs:isDefinedBy l0: .
+
+
+###  https://w3id.org/italia/onto/l0/Description
+l0:Description rdf:type owl:Class ;
+               rdfs:isDefinedBy l0: .
+
+
+###  https://w3id.org/italia/onto/l0/Location
+l0:Location rdf:type owl:Class ;
+            rdfs:isDefinedBy l0: .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://spcdata.digitpa.gov.it/browse/page/Amministrazione/ISTAT
+<http://spcdata.digitpa.gov.it/browse/page/Amministrazione/ISTAT> rdf:type owl:NamedIndividual ,
+                                                                           <http://dati.gov.it/onto/dcatapit#Agent> ,
+                                                                           foaf:Agent ;
+                                                                  dct:identifier "ISTAT" ;
+                                                                  foaf:name "Istituto Nazionale di Statistica - ISTAT"@it ,
+                                                                            "Italian National Institute of Statistics - ISTAT"@en .
+
+
+###  http://spcdata.digitpa.gov.it/browse/page/Amministrazione/agid
+<http://spcdata.digitpa.gov.it/browse/page/Amministrazione/agid> rdf:type owl:NamedIndividual ,
+                                                                          <http://dati.gov.it/onto/dcatapit#Agent> ,
+                                                                          foaf:Agent ;
+                                                                 dct:identifier "agid" ;
+                                                                 foaf:name "Agenzia per l'Italia Digitale"@it ,
+                                                                           "Italian Digital Agency"@en .
+
+
+###  https://w3id.org/italia/data/contact-point/onto-agid
+<https://w3id.org/italia/data/contact-point/onto-agid> rdf:type owl:NamedIndividual ,
+                                                                <http://dati.gov.it/onto/dcatapit#Organization> ,
+                                                                vcard:Kind ,
+                                                                vcard:Organization ;
+                                                       vcard:fn "banche dati e open data" ;
+                                                       vcard:hasEmail <mailto:info@dati.gov.it> .
+
+
+###  https://w3id.org/italia/data/distribution/CPVAPIT-JSON-LD
+<https://w3id.org/italia/data/distribution/CPVAPIT-JSON-LD> rdf:type owl:NamedIndividual ,
+                                                                     admsapit:SemanticAssetDistribution ;
+                                                            dct:description "Questa è la distribuzione JSON-LD dell'ontologia delle Persone"@it ,
+                                                                            "This is the distribution in JSON-LD of the persons ontology"@en ;
+                                                            dct:format <http://publications.europa.eu/resource/authority/file-type/JSON_LD> ;
+                                                            dct:license <https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40> ;
+                                                            dct:title "Distribuzione JSON-LD ontologia CPV-AP_IT"@it ,
+                                                                      "JSON-LD distribution of CPV-AP_IT Ontology"@en ;
+                                                            dcat:accessURL <https://raw.githubusercontent.com/italia/daf-ontologie-vocabolari-controllati/master/Ontologie/CPV/latest> ;
+                                                            dcat:downloadURL <https://raw.githubusercontent.com/italia/daf-ontologie-vocabolari-controllati/master/Ontologie/CPV/latest/CPV-AP_IT.jsonld> .
+
+
+###  https://w3id.org/italia/data/distribution/CPVAPIT-RDF-TURTLE
+<https://w3id.org/italia/data/distribution/CPVAPIT-RDF-TURTLE> rdf:type owl:NamedIndividual ,
+                                                                        admsapit:SemanticAssetDistribution ;
+                                                               dct:description "Questa è la distribuzione RDF/Turtle dell'ontologia delle persone"@it ,
+                                                                               "This is the distribution in RDF/turtle of the persons ontology"@en ;
+                                                               dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
+                                                               dct:license <https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40> ;
+                                                               dct:title "Distribuzione RDF/Turtle ontologia CPV-AP_IT"@it ,
+                                                                         "RDF/Turtle distribution of CPV-AP_IT Ontology"@en ;
+                                                               dcat:accessURL <https://raw.githubusercontent.com/italia/daf-ontologie-vocabolari-controllati/master/Ontologie/CPV/latest> ;
+                                                               dcat:downloadURL <https://raw.githubusercontent.com/italia/daf-ontologie-vocabolari-controllati/master/Ontologie/CPV/latest/CPV-AP_IT.ttl> .
+
+
+###  https://w3id.org/italia/data/distribution/CPVAPIT-RDF-XML
+<https://w3id.org/italia/data/distribution/CPVAPIT-RDF-XML> rdf:type owl:NamedIndividual ,
+                                                                     admsapit:SemanticAssetDistribution ;
+                                                            dct:description "Questa è la distribuzione RDF/XML dell'ontologia delle persone"@it ,
+                                                                            "This is the distribution in RDF/XML of the persons ontology"@en ;
+                                                            dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_XML> ;
+                                                            dct:license <https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40> ;
+                                                            dct:title "Distribuzione RDF/XML ontologia CPV-AP_IT"@it ,
+                                                                      "RDF/XML distribution of CPV-AP_IT Ontology"@en ;
+                                                            dcat:accessURL <https://raw.githubusercontent.com/italia/daf-ontologie-vocabolari-controllati/master/Ontologie/CPV/latest> ;
+                                                            dcat:downloadURL <https://raw.githubusercontent.com/italia/daf-ontologie-vocabolari-controllati/master/Ontologie/CPV/latest/CPV-AP_IT.rdf> .
+
+
+###  https://w3id.org/italia/data/organization/support-unit/cnr-Z6HZEH/stlab
+<https://w3id.org/italia/data/organization/support-unit/cnr-Z6HZEH/stlab> rdf:type owl:NamedIndividual ,
+                                                                                   l0:Agent ;
+                                                                          l0:name "Institute of Cognitive Sciences and Technologies of the Italian Research Council (CNR) - Semantic Technology Laboratory (STLab)"@en ,
+                                                                                  "Istituto di Scienze e Tecnologie della Cognizione del CNR - Semantic Technology Lab (STLab)"@it ;
+                                                                          dct:identifier "cnr - Z6HZEH - STLab" .
+
+
+###  https://w3id.org/italia/data/project/DAF
+<https://w3id.org/italia/data/project/DAF> rdf:type owl:NamedIndividual ,
+                                                    admsapit:Project ;
+                                           l0:name "Data & Analytics Framework"@it .
+
+
+###  https://w3id.org/italia/data/project/OntoPiA
+<https://w3id.org/italia/data/project/OntoPiA> rdf:type owl:NamedIndividual ,
+                                                        admsapit:Project ;
+                                               l0:name "OntoPiA - la rete di ontologie della pubblica amministrazione italiana"@it .
+
+
+###  https://w3id.org/italia/onto/CPV
+<https://w3id.org/italia/onto/CPV> rdf:type owl:NamedIndividual ,
+                                            admsapit:SemanticAsset .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

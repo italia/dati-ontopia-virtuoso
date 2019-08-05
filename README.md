@@ -1,10 +1,6 @@
-# {MY_REPO} for Piattaforma Digitale Nazionale Dati (PDND), previously DAF
+# OntoPiA Virtuoso for Piattaforma Digitale Nazionale Dati (PDND), previously DAF
 
-> Insert here the application logo and badges if present.
-
-> Insert here warnings if necessary (ie. if this is a not stable version).
-
-> Insert here a brief description of what your repository contains. Insert also links to the last release, the official page, the extended documentation, and other useful external resources.
+This projects provides the SPARQL enpoint "Virtuoso" for enhancing user experience with the ontologies and the controlled vocabularies of OntoPiA
 
 ## What is the PDND (previously DAF)?
 
@@ -12,34 +8,46 @@ PDND stays for "Piattaforma Digitale Nazionale Dati" (the Italian Digital Data P
 
 You can find more informations about the PDND on the official [Digital Transformation Team website](https://teamdigitale.governo.it/it/projects/daf.htm).
 
-## What is {MY_REPO}?
+## What is Virtuoso?
 
-> Insert here an extended description of the project with informations about context, goals, stakeholders, use cases, and finally the role of the project within the PDND with links to other repositories requiring this code or this code depends on. Embed also screenshots or video if present to give a preview of the application.
+Virtuoso is a high-performance object-relational SQL database. As a database, it provides transactions, a smart SQL compiler, powerful stored-procedure language with optional Java and .Net server-side hosting, hot backup, SQL-99 support and more. It has all major data-access interfaces, such as ODBC, JDBC, ADO .Net and OLE/DB.
 
-> Insert here informations about files and folders structure, branch model adopted and release policy.
+Virtuoso has a built-in web server which can serve dynamic web pages written in Virtuoso's web language (VSP) as well as PHP, ASP .net and others. This same web server provides SOAP and REST access to Virtuoso stored procedures, supporting a broad set of WS protocols such as WS-Security, WS-Reliable Messaging and others. A BPEL4WS run time is also available as part of Virtuoso's SOA suite.
 
-### Tools references *(optional)*
+Virtuoso has a built-in WebDAV repository. This can host static and dynamic web content and optionally provides versioning. The WebDAV repository is tested to interoperate with WebDAV clients built into Windows XP, Mac OSX and others and makes Virtuoso a convenient and secure place for keeping one's files on the net. Further, Virtuoso provides automatic metadata extraction and full text searching for supported content types.
 
-This project references the following tools.
+(credits: [http://vos.openlinksw.com](http://vos.openlinksw.com))
 
-* [Tool 1](https://link-to-tool-1.com/)
-* [Tool 2](https://link-to-tool-2.com/)
+OntoPiA Virtuoso is a custom, containerized version of the standard version of Virtuoso used for OntoPiA, in the PDND project.
 
-### Project components *(optional)*
+## How to build and test OntoPiA Virtuoso
 
-This project depends by the following components.
+The project relies on Docker.
+To build the containers type the following command in the terminal having the root of the project as base folder:
 
-* **Component 1** version X.Y.Z, available [here](https://link-to-your-external-component).
+```shell
+docker-compose build
+```
 
-* **Component 2** version X.Y.Z, available [here](https://link-to-your-external-component).
+To run the containers type the following command in the terminal having the root of the project as base folder:
 
-## How to install and use {MY_REPO} *(optional)*
+```shell
+docker-compose up
+```
 
-> Insert here a brief documentation to use this project as an end-user (not a developer) if applicable, including pre-requisites and internal and external dependencies. Insert a link to an extended documentation (user manual) if present.
+Once the containers are up and assuming that `localhost` is the reference host, users can access the SPARQL endpoint at <http://localhost:8890/sparql;>
 
-## How to build and test {MY_REPO}
+## SPARQL
 
-> Insert here a brief documentation for the developer to build, test and contribute. Insert a link to an extended documentation (developer manual) if present.
+The following is an example of SPARQL SELECT query that returns all the classes defined in the ontology network of OntoPiA.
+
+```sql
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT DISTINCT ?class
+WHERE {
+  ?class a owl:Class
+}
+```
 
 ## How to contribute
 
