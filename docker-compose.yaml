@@ -1,10 +1,18 @@
 ---
-version: "3.7"
+version: '2'
+
 services:
+
   virtuoso:
-    build: ./
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: pdnd-ontopia-virtuoso
+    image: teamdigitale/pdnd-ontopia-virtuoso
     environment:
       SPARQL_UPDATE: "true"
+    stdin_open: true
+    tty: true
     ports:
-      - "8890:8890"
-      - "1111:1111"
+      - 8890:8890/tcp
+      - 1111:1111/tcp
