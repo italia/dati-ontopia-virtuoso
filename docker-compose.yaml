@@ -7,8 +7,4 @@ services:
       SPARQL_UPDATE: "true"
     ports:
       - "8890:8890"
-    volumes:
-      - db-virtuoso:/data
-
-volumes:
-  db-virtuoso:
+      - "1111:1111"
