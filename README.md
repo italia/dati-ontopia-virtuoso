@@ -8,11 +8,17 @@ PDND stays for "Piattaforma Digitale Nazionale Dati" (the Italian Digital Data P
 
 You can find more informations about the PDND on the official [Digital Transformation Team website](https://teamdigitale.governo.it/it/projects/daf.htm).
 
-TBD ## What is pdnd-ontopia-virtuoso?
+## What is Virtuoso?
 
-> Insert here an extended description of the project with informations about context, goals, stakeholders, use cases, and finally the role of the project within the PDND with links to other repositories requiring this code or this code depends on. Embed also screenshots or video if present to give a preview of the application.
+Virtuoso is a high-performance object-relational SQL database. As a database, it provides transactions, a smart SQL compiler, powerful stored-procedure language with optional Java and .Net server-side hosting, hot backup, SQL-99 support and more. It has all major data-access interfaces, such as ODBC, JDBC, ADO .Net and OLE/DB.
 
-> Insert here informations about files and folders structure, branch model adopted and release policy.
+Virtuoso has a built-in web server which can serve dynamic web pages written in Virtuoso's web language (VSP) as well as PHP, ASP .net and others. This same web server provides SOAP and REST access to Virtuoso stored procedures, supporting a broad set of WS protocols such as WS-Security, WS-Reliable Messaging and others. A BPEL4WS run time is also available as part of Virtuoso's SOA suite.
+
+Virtuoso has a built-in WebDAV repository. This can host static and dynamic web content and optionally provides versioning. The WebDAV repository is tested to interoperate with WebDAV clients built into Windows XP, Mac OSX and others and makes Virtuoso a convenient and secure place for keeping one's files on the net. Further, Virtuoso provides automatic metadata extraction and full text searching for supported content types.
+
+(credits: [http://vos.openlinksw.com](http://vos.openlinksw.com))
+
+OntoPiA Virtuoso is a custom, containerized version of the standard version of Virtuoso used for OntoPiA, in the PDND project.
 
 ## How to build and test OntoPiA Virtuoso
 
