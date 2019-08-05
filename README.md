@@ -1,4 +1,4 @@
-# pdnd-ontopia-virtuoso for Piattaforma Digitale Nazionale Dati (PDND), previously DAF
+# OntoPiA Virtuoso for Piattaforma Digitale Nazionale Dati (PDND), previously DAF
 
 This projects provides the SPARQL enpoint "Virtuoso" for enhancing user experience with the ontologies and the controlled vocabularies of OntoPiA
 
@@ -14,7 +14,7 @@ TBD ## What is pdnd-ontopia-virtuoso?
 
 > Insert here informations about files and folders structure, branch model adopted and release policy.
 
-## How to build and test pdnd-ontopia-virtuoso
+## How to build and test OntoPiA Virtuoso
 
 The project relies on Docker.
 To build the containers type the following command in the terminal having the root of the project as base folder:
