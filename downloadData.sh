@@ -38,7 +38,7 @@ curl -L -H "Accept: text/turtle" https://w3id.org/italia/controlled-vocabulary/c
 curl -L -H "Accept: text/turtle" https://w3id.org/italia/controlled-vocabulary/territorial-classifications/cities > cities.ttl
 curl -L -H "Accept: text/turtle" https://w3id.org/italia/controlled-vocabulary/classifications-for-documents/government-documents-types > gdt.ttl
 curl -L -H "Accept: text/turtle" https://w3id.org/italia/controlled-vocabulary/classifications-for-documents/municipal-notice-board > mnb.ttl
-
+curl -L -H "Accept: text/turtle" https://w3id.org/italia/controlled-vocabulary/classifications-for-universities/italian-academic-roles > iar.ttl
 
 
 cd -
